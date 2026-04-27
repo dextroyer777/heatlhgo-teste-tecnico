@@ -1,9 +1,15 @@
+---
+author: Filipe S. Sabino Gomes
+date: 2026-04-27
+---
+
 # Desafio Técnico: Arquiteto de Software - HealthGo
 
-## 1. Visão Geral da Arquitetura
-Esta solução foi desenhada priorizando a resiliência em cenários de conectividade instável e o desacoplamento para permitir a evolução para um módulo de IA/ML sem redesenho sistêmico.
+[cite_start]Esta documentação detalha a proposta de arquitetura para o sistema de coleta de ECG end-to-end [cite: 43][cite_start], focando em resiliência de borda (edge), observabilidade e evolução sistêmica[cite: 43, 55].
 
-### Diagrama (C4 Model)
+## 1. Diagrama de Arquitetura (C4 Model)
+[cite_start][cite: 36, 57]
+
 ```mermaid
 C4Container
     title Arquitetura de Coleta de ECG - HealthGo
