@@ -45,9 +45,7 @@ C4Container
     Rel(dash, backend, "API/WS")
     Rel(backend, s3, "Async Archive")
     Rel(medico, dash, "Monitora")
-    ```
-    
-    
+```
 ## 3. ADRs (Decisões de Arquitetura)
 
 ### ADR-001: Estratégia de Store-and-Forward na Borda
