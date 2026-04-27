@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "diagrams/arquitetura-ecg.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "arquitetura-ecg"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "diagrams/arquitetura-ecg.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Links inversos para README"
+              "title": "Links inversos para arquitetura-ecg"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "diagrams/arquitetura-ecg.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Links de saída para README"
+              "title": "Links de saída para arquitetura-ecg"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "diagrams/arquitetura-ecg.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de README"
+              "title": "Sumário de arquitetura-ecg"
             }
           }
         ]
@@ -185,11 +185,17 @@
   },
   "active": "23f6694bf074ec1d",
   "lastOpenFiles": [
+    "exports/arquitetura-ecg.svg",
+    "exports/Não confirmado 328662.crdownload",
+    "Arquitetura/Visao-Geral-Infraestrutura.md",
+    "diagrams/arquitetura-ecg.md",
+    "diagrams/Não confirmado 942034.crdownload",
+    "README.md",
+    "Arquitetura/Não confirmado 368291.crdownload",
     "ADRs/ADR-001-Store-and-Forward.md",
     "ADRs/ADR-002-Protocolo-Ingestao.md",
     "ADRs/ADR-003-Armazenamento-Hibrido.md",
     "ADRs/Não confirmado 736775.crdownload",
-    "README.md",
     "Arquitetura"
   ]
 }
