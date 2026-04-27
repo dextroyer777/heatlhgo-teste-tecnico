@@ -79,7 +79,9 @@ C4Container
 
 ### 1. Docker
 
-(a) Estruturaria com _multi-stage builds_ (build image + runtime image distroless/alpine) para segurança. Execução com usuário não-root e `--device=/dev/ttyUSB0` para acesso ao hardware. (b) `COPY` é executado em tempo de build (imutável na imagem); `cp` no host altera o ambiente em tempo de execução. `COPY` garante reprodutibilidade. (c) Inconsistência de permissões de acesso ao hardware (`/dev/ttyUSB0`) em diferentes kernels ou distros no host.
+(a) Estruturaria com _multi-stage builds_ (build image + runtime image distroless/alpine) para segurança. Execução com usuário não-root e `--device=/dev/ttyUSB0` para acesso ao hardware. 
+
+(b) `COPY` é executado em tempo de build (imutável na imagem); `cp` no host altera o ambiente em tempo de execução. `COPY` garante reprodutibilidade. (c) Inconsistência de permissões de acesso ao hardware (`/dev/ttyUSB0`) em diferentes kernels ou distros no host.
 
 ### 2. Mensageria
 
