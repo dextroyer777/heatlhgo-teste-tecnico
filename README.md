@@ -7,6 +7,8 @@ date: 2026-04-27
 
 Esta documentação detalha a proposta de arquitetura para o sistema de coleta de ECG end-to-end, focando em resiliência de borda (edge), observabilidade e evolução sistêmica.
 
+> **Documentação de Arquitetura:** Consulte a [Visão Macro (HLD)](HLD/Visao-Geral.md) para detalhes visuais e fluxo de alto nível.
+
 ## 1. Hipóteses Assumidas
 Para guiar este projeto, definimos as seguintes premissas operacionais:
 * **Volume:** O sistema suporta 500 amostras/s por dispositivo de forma constante.
