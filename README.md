@@ -79,13 +79,15 @@ C4Container
 
 ### 1. Docker
 
-(a) Estruturaria com _multi-stage builds_ (build image + runtime image distroless/alpine) para segurança. Execução com usuário não-root e `--device=/dev/ttyUSB0` para acesso ao hardware. 
+(a) Estrutura com _multi-stage builds_ (build image + runtime image distroless/alpine) para segurança. Execução com usuário não-root e `--device=/dev/ttyUSB0` para acesso ao hardware. 
 
-(b) `COPY` é executado em tempo de build (imutável na imagem); `cp` no host altera o ambiente em tempo de execução. `COPY` garante reprodutibilidade. (c) Inconsistência de permissões de acesso ao hardware (`/dev/ttyUSB0`) em diferentes kernels ou distros no host.
+(b) `COPY` é executado em tempo de build (imutável na imagem); `cp` no host altera o ambiente em tempo de execução. `COPY` garante reprodutibilidade. 
+
+(c) Inconsistência de permissões de acesso ao hardware (`/dev/ttyUSB0`) em diferentes kernels ou distros no host.
 
 ### 2. Mensageria
 
-Escolho **MQTT** para telemetria.
+**MQTT** para telemetria.
 
 - Trade-off 1 (Eficiência): Overhead mínimo de headers comparado a HTTP/Kafka, crucial para internet instável.
     
@@ -94,7 +96,9 @@ Escolho **MQTT** para telemetria.
 
 ### 3. Segurança
 
-(a) OAuth2 é framework de autorização; OIDC adiciona camada de identidade (ID Token) sobre OAuth2, essencial para validar quem é o usuário (Médico no SSO vs App Mobile). (b) Risco de _Confused Deputy_ ou vazamento de Access Tokens. Sem OIDC, não há validação forte da identidade do usuário, apenas do acesso.
+(a) OAuth2 é framework de autorização; OIDC adiciona camada de identidade (ID Token) sobre OAuth2, essencial para validar quem é o usuário (Médico no SSO vs App Mobile). 
+
+(b) Risco de _Confused Deputy_ ou vazamento de Access Tokens. Sem OIDC, não há validação forte da identidade do usuário, apenas do acesso.
 
 ### 4. Banco de Dados
 
@@ -110,3 +114,36 @@ Caminho **(A) Fila MQTT dedicada ao ECG**.
 - Justificativa: Isolamento de domínio evita "noisy neighbor" (picos de telemetria de ECG afetando outros produtos).
     
 - Mitigação: Documentaria o protocolo como "Biblioteca Padrão HealthGo" (SDK interno) para padronizar ingestão, promovendo a infra de ECG como _enabler_ de arquitetura e realizando mentoria com times de dados/produtos para facilitar a adoção.
+
+## 5. Stack Tecnológica e Ferramentas
+
+### Desenvolvimento e Integração (CI/CD)
+
+- **CI:** GitHub Actions para testes unitários, linting e análise de segurança (SAST).
+    
+- **CD (Cloud):** _Push-based_ via Terraform para provisionamento declarativo.
+    
+- **CD (Edge):** _Pull-based_ para implantações automáticas via Container Registry, eliminando acesso manual.
+    
+
+### Infraestrutura como Código (IaC)
+
+- **Provisionamento:** Terraform para recursos em nuvem.
+    
+- **Configuração:** Ansible para padronização de ambiente nos _Edge Gateways_.
+    
+
+### Observabilidade
+
+- **Métricas:** Prometheus para coleta de dados de infra e aplicação.
+    
+- **Visualização:** Grafana para monitoramento e alertas em tempo real.
+    
+
+## 6. Princípios Arquiteturais
+
+1. **Resiliência:** Offline-first por design.
+    
+2. **Operabilidade:** Foco total em IaC para manter a squad enxuta.
+    
+3. **Escalabilidade:** Arquitetura desacoplada via Pub/Sub (MQTT) para permitir a evolução do sistema (ex: novos serviços de ML).
