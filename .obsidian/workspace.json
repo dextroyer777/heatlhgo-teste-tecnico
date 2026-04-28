@@ -11,14 +11,12 @@
             "id": "1efe8887f1e21d85",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
+                "file": "HLD/Drawing 2026-04-27 20.12.00.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "README"
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-04-27 20.12.00.excalidraw"
             }
           },
           {
@@ -55,15 +53,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HLD/Visao-Geral.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Visao-Geral"
+              "title": "README"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -226,14 +225,15 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1efe8887f1e21d85",
+  "active": "08c084f83d25d862",
   "lastOpenFiles": [
+    "HLD/Drawing 2026-04-27 20.12.00.excalidraw.png",
+    "README.md",
     "HLD/Visao-Geral.md",
+    "HLD/Drawing 2026-04-27 20.12.00.excalidraw.md",
     "ADRs/ADR-003-Armazenamento-Hibrido.md",
     "ADRs/ADR-002-Protocolo-Ingestao.md",
     "ADRs/ADR-001-Store-and-Forward.md",
-    "README.md",
-    "HLD/Drawing 2026-04-27 20.12.00.excalidraw.md",
     "Excalidraw",
     "HLD",
     "diagrams/arquitetura-ecg.md",
