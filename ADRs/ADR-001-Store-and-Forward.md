@@ -28,6 +28,8 @@ Implementar um agente local (Edge Gateway) com banco de dados embarcado (SQLite)
 2. **Envio Direto (HTTP):** Descartado pois a instabilidade da rede causaria bloqueio no fluxo clínico e perda de pacotes durante as quedas.
 
 ## Trade-offs e Impacto
-- **Positivo:** Garante a integridade dos dados clínicos independente da rede.
-- **Negativo:** Aumenta a complexidade de gestão do dispositivo na ponta (necessita de monitoramento de disco e gestão de arquivos).
-- **Impacto Sistêmico:** Exige que o time de infraestrutura crie mecanismos de *auto-update* e monitoramento de saúde para os Agentes de borda.
+- - **Positivo:** Garante a **integridade clínica e auditoria** dos dados, transformando uma falha de rede (risco de negócio) em um problema de latência gerenciável (problema técnico).
+    
+- **Negativo:** Introduz um _stateful component_ na borda. Exige monitoramento ativo do disco (evitar _out-of-disk_ em ambiente sem acesso fácil) e implementação de uma estratégia de _pruning_ (limpeza de dados antigos) para evitar crescimento infinito do SQLite.
+    
+- **Impacto Sistêmico:** Aumenta a responsabilidade do Edge Gateway, que deixa de ser um "pass-through" para virar um nó de armazenamento. Isso requer um pipeline de _deployment_ que inclua validação de saúde do banco (schema migrations).

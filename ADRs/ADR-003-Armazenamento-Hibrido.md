@@ -18,6 +18,8 @@ Arquitetura *Tiered*: InfluxDB (Hot Storage - 30 dias) para alta performance e e
 1. **RDBMS único (Postgres):** Descartado devido à amplificação de escrita (*write amplification*) e lentidão em consultas temporais com alto volume.
 
 ## Trade-offs e Impacto
-- **Positivo:** O InfluxDB absorve a carga de escrita constante sem bloquear as leituras do dashboard. O S3 reduz drasticamente os custos de retenção de longo prazo.
-- **Negativo:** Aumenta a complexidade operacional, exigindo um job de ETL/Archive para mover dados entre os Tiers.
-- **Impacto Sistêmico:** Permite que o time de ML (que chegará em 6 meses) consuma dados estruturados e otimizados (Parquet) sem impactar a performance da aplicação em tempo real.
+- **Positivo:** **Otimização de custo (FinOps):** Diferencia o custo de armazenamento de dados "quentes" (processamento intenso) de dados "frios" (arquivamento de longo prazo). Garante que a performance do dashboard seja constante, independente do volume histórico acumulado.
+    
+- **Negativo:** Complexidade de gestão do ciclo de vida dos dados (Data Lifecycle). Exige a criação e manutenção de Jobs de ETL (Export/Archive) que, se falharem, podem causar _data gap_ entre as camadas, necessitando de alertas de reconciliação.
+    
+- **Impacto Sistêmico:** Permite uma arquitetura _Analytics-Ready_. Ao salvar em formato colunar (Parquet) no S3, o time de ML consegue processar anos de histórico de ECG de forma eficiente e barata, sem precisar ler bancos relacionais pesados.
