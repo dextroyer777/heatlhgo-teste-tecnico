@@ -4,21 +4,49 @@
     "type": "split",
     "children": [
       {
-        "id": "3568cb2388917e4d",
+        "id": "18491bf2ed814352",
         "type": "tabs",
         "children": [
           {
-            "id": "23f6694bf074ec1d",
+            "id": "1efe8887f1e21d85",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "diagrams/arquitetura-ecg.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "arquitetura-ecg"
+              "title": "README"
+            }
+          },
+          {
+            "id": "e2f4401a83fcf0da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ADRs/ADR-002-Protocolo-Ingestao.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ADR-002-Protocolo-Ingestao"
+            }
+          },
+          {
+            "id": "08c084f83d25d862",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ADRs/ADR-003-Armazenamento-Hibrido.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ADR-003-Armazenamento-Hibrido"
             }
           }
         ]
@@ -94,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "diagrams/arquitetura-ecg.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Links inversos para arquitetura-ecg"
+              "title": "Links inversos para README"
             }
           },
           {
@@ -113,12 +141,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "diagrams/arquitetura-ecg.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Links de saída para arquitetura-ecg"
+              "title": "Links de saída para README"
             }
           },
           {
@@ -156,13 +184,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "diagrams/arquitetura-ecg.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de arquitetura-ecg"
+              "title": "Sumário de README"
             }
           }
         ]
@@ -180,21 +208,27 @@
       "daily-notes:Abrir a nota de hoje": false,
       "templates:Inserir modelo": false,
       "command-palette:Abrir paleta de comandos": false,
-      "bases:Criar nova base": false
+      "bases:Criar nova base": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "23f6694bf074ec1d",
+  "active": "1efe8887f1e21d85",
   "lastOpenFiles": [
-    "exports/arquitetura-ecg.svg",
-    "exports/Não confirmado 328662.crdownload",
-    "Arquitetura/Visao-Geral-Infraestrutura.md",
-    "diagrams/arquitetura-ecg.md",
-    "diagrams/Não confirmado 942034.crdownload",
-    "README.md",
-    "Arquitetura/Não confirmado 368291.crdownload",
+    "HLD/Arquitetura-alto-nivel.md",
     "ADRs/ADR-001-Store-and-Forward.md",
     "ADRs/ADR-002-Protocolo-Ingestao.md",
     "ADRs/ADR-003-Armazenamento-Hibrido.md",
+    "HLD/Drawing 2026-04-27 20.12.00.excalidraw.md",
+    "Excalidraw",
+    "HLD",
+    "README.md",
+    "diagrams/arquitetura-ecg.md",
+    "Não confirmado 760155.crdownload",
+    "exports/arquitetura-ecg.svg",
+    "exports/Não confirmado 328662.crdownload",
+    "Arquitetura/Visao-Geral-Infraestrutura.md",
+    "diagrams/Não confirmado 942034.crdownload",
+    "Arquitetura/Não confirmado 368291.crdownload",
     "ADRs/Não confirmado 736775.crdownload",
     "Arquitetura"
   ]

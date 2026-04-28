@@ -48,7 +48,7 @@ C4Container
 ```
 ## 3. ADRs (Decisões de Arquitetura)
 
-### ADR-001: Estratégia de Store-and-Forward na Borda
+### [ADR-001: Estratégia de Store-and-Forward na Borda](ADRs/ADR-001-Store-and-Forward.md)
 
 - **Decisão:** Uso de SQLite local no Edge Gateway para persistência temporária (buffer).
     
@@ -57,7 +57,7 @@ C4Container
 - **Trade-off:** Aumenta a complexidade de gestão de armazenamento na borda, mas garante a integridade dos dados (requisito inegociável).
     
 
-### ADR-002: Protocolo de Ingestão (MQTT)
+### [ADR-002: Protocolo de Ingestão (MQTT)](ADRs/ADR-002-Protocolo-Ingestao.md)
 
 - **Decisão:** MQTT (QoS 1) para telemetria.
     
@@ -66,7 +66,7 @@ C4Container
 - **Trade-off:** Exige configuração de Broker em nuvem, mas oferece eficiência de banda e resiliência superiores.
     
 
-### ADR-003: Armazenamento Híbrido (Tiered Storage)
+### [ADR-003: Armazenamento Híbrido (Tiered Storage)](ADRs/ADR-003-Armazenamento-Hibrido.md)
 
 - **Decisão:** InfluxDB (30 dias) para acesso rápido e S3 (1 ano) para cold storage.
     
