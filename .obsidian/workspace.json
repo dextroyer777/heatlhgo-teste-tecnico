@@ -53,6 +53,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Arquitetura/Visao-Geral-Infraestrutura.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Visao-Geral-Infraestrutura"
+            }
+          },
+          {
+            "id": "dc0c7f4de53f5b24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "README.md",
                 "mode": "source",
                 "source": false
@@ -227,9 +241,10 @@
   },
   "active": "08c084f83d25d862",
   "lastOpenFiles": [
-    "HLD/Drawing 2026-04-27 20.12.00.excalidraw.png",
     "README.md",
+    "Arquitetura/Visao-Geral-Infraestrutura.md",
     "HLD/Visao-Geral.md",
+    "HLD/Drawing 2026-04-27 20.12.00.excalidraw.png",
     "HLD/Drawing 2026-04-27 20.12.00.excalidraw.md",
     "ADRs/ADR-003-Armazenamento-Hibrido.md",
     "ADRs/ADR-002-Protocolo-Ingestao.md",
@@ -240,7 +255,6 @@
     "Não confirmado 760155.crdownload",
     "exports/arquitetura-ecg.svg",
     "exports/Não confirmado 328662.crdownload",
-    "Arquitetura/Visao-Geral-Infraestrutura.md",
     "diagrams/Não confirmado 942034.crdownload",
     "Arquitetura/Não confirmado 368291.crdownload",
     "ADRs/Não confirmado 736775.crdownload",

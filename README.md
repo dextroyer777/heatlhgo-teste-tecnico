@@ -151,3 +151,57 @@ Caminho **(A) Fila MQTT dedicada ao ECG**.
 2. **Operabilidade:** Foco total em IaC para manter a squad enxuta.
     
 3. **Escalabilidade:** Arquitetura desacoplada via Pub/Sub (MQTT) para permitir a evolução do sistema (ex: novos serviços de ML).
+
+
+## 🏗️ Descrição dos Componentes do Sistema
+
+### 1. Edge Gateway (Borda)
+
+- **Papel:** Atua como o ponto de entrada de dados dentro das clínicas.
+    
+- **Tecnologia:** Binário compilado em **Go** para alta performance e baixo consumo de recursos.
+    
+- **Funcionalidade Ingestor:** Realiza a leitura constante da porta USB (Serial) do aparelho de ECG (500 amostras/s) e aplica máscaras de PII (dados sensíveis) para conformidade.
+    
+- **Persistência Local:** Utiliza **SQLite** como buffer (Store-and-Forward), garantindo que o sistema seja _offline-first_ e suporte quedas de rede de até 30 minutos sem perda de dados.
+    
+- **Funcionalidade Worker:** Uma thread em background monitora o SQLite e realiza o envio assíncrono dos dados para a nuvem assim que a conectividade é detectada.
+    
+
+### 2. Broker MQTT (Transporte)
+
+- **Papel:** Servidor de mensageria independente que desacopla a coleta de dados do processamento final.
+    
+- **Tecnologia:** **AWS IoT Core** (Broker gerenciado).
+    
+- **Vantagem:** Utiliza o protocolo MQTT (QoS 1) para garantir a entrega com o mínimo de overhead de rede, ideal para conexões de internet instáveis.
+    
+- **Escalabilidade:** Permite que milhares de clínicas enviem dados simultaneamente sem que o produtor precise conhecer o consumidor.
+    
+
+### 3. Ingestion Service (Nuvem)
+
+- **Papel:** Microserviço consumidor responsável pela persistência final e governança dos dados.
+    
+- **Tecnologia:** Aplicação em **Go** rodando em ambiente de containers na nuvem.
+    
+- **Fluxo de Dados:** O serviço "assina" os tópicos do Broker MQTT e processa cada mensagem recebida.
+    
+- **Armazenamento Híbrido (Tiered Storage):**
+    
+    - **Hot Storage:** Gravação imediata no **InfluxDB** (Time-Series) para visualização em tempo real no Dashboard (retenção de 30 dias).
+        
+    - **Cold Storage:** Arquivamento assíncrono no **Amazon S3** em formato otimizado para auditoria e futuros treinamentos de ML (retenção de 1 ano).
+        
+
+---
+
+## 📊 Camada de Observabilidade Centralizada
+
+- **Propósito:** Monitorar a saúde de todos os componentes de ponta a ponta sem interferir na lógica de negócio.
+    
+- **Métricas (Prometheus):** Monitora o uso de CPU/Memória do Edge Gateway e a taxa de ingestão do serviço de nuvem.
+    
+- **Logs (Loki):** Centraliza erros de conexão serial na borda e falhas de escrita nos bancos de dados para facilitar o troubleshooting remoto.
+    
+- **Visualização (Grafana):** Painel único que correlaciona métricas de hardware, rede e aplicação, permitindo alertas proativos antes que o serviço seja interrompido.
