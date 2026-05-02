@@ -76,7 +76,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -239,10 +239,10 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "08c084f83d25d862",
+  "active": "dc0c7f4de53f5b24",
   "lastOpenFiles": [
-    "README.md",
     "Arquitetura/Visao-Geral-Infraestrutura.md",
+    "README.md",
     "HLD/Visao-Geral.md",
     "HLD/Drawing 2026-04-27 20.12.00.excalidraw.png",
     "HLD/Drawing 2026-04-27 20.12.00.excalidraw.md",
